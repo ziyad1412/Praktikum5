@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs Rupiah</title>
+    <style>
+        .garis{
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: space-around;
+            margin: 1em;
+            padding: 1em;
+        }
+    </style>
+    
+
+</head>
+
+<body>
+    <fieldset class="garis">
+        <legend>Kurs Rupiah - Mata Uang Asing</legend>
+        <table>
+            <tr>
+                <th>Masukan Nilai</th>
+                <th>Valas</th>
+                <th>Nilai Rupiah</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="text" name="" value="0" id="nilai" onchange="ubah()">
+                </td>
+                <td>
+                    <select id="values" onchange="ubah()">
+                        <option value="dollar">Dollar US</option>
+                        <option value="dollarsgp">Dollar Singapore</option>
+                        <option value="ringgit">Ringgit Malaysia</option>
+                        <option value="yen">Yen Jepang</option>
+                        <option value="euro">Euro</option>
+                        <option value="riyal">Riyal Arab Saudi</option>
+                    </select>
+                </td>
+                <td><input type="text" id="rupiah" value="0"></td>
+            </tr>
+
+        </table>
+    </fieldset>
+
+    <script>
+        function ubah() {
+            let n = Number(document.getElementById("nilai").value);
+            let v = document.getElementById("values").value;
+
+            if (v === "dollar") {
+                document.getElementById("rupiah").value = n * 9915;
+            }
+            else if (v === "dollarsgp") {
+                document.getElementById("rupiah").value = n * 13472;
+            }
+            else if (v === "ringgit") {
+                document.getElementById("rupiah").value = n * 874;
+            }
+            else if (v === "yen") {
+                document.getElementById("rupiah").value = n * 120;
+            }
+            else if (v === "euro") {
+                document.getElementById("rupiah").value = n * 15888;
+            }
+            else if (v === "riyal") {
+                document.getElementById("rupiah").value = n * 3592;
+            }
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
