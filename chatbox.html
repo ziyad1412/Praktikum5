@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Box Website</title>
+    <style>
+        
+
+        body{
+            font-family: Arial;
+        }
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            height: 100vh;
+            width: 100%;
+            background-image:url(https://images.unsplash.com/photo-1454117096348-e4abbeba002c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80) ;
+            background-size: cover;
+        }
+
+        h2{
+            position: absolute;
+            left: 50%;
+            top: 25%;
+            transform: translate(-50%);
+            font-size: 50px;
+            color:rgba(255,255,255,1);
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+
+        /* tombol open chat box */
+        .open-button{
+            background-color: rgba(255,255,255,0.8);
+            color: rgba(0,0,0,7);
+            padding: 16px 20px; 
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+        }
+
+        /* popup chat */
+        .chat-popup{
+            display:;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border:3px solid #f1f1f1 ;
+            z-index: 9;
+        }
+
+        /* style buat form */
+        .form-container{
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        /* style textarea */
+        .area{
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            min-height: 200px;
+        }
+
+        /* style button kirim */
+        .btn{
+            background-color: #659dbd;
+            color: rgba(0,0,0,0.8);
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* style button keluar */
+        .cancel{
+            background-color: rgba(0,0,0,7);
+            color: rgba(255,255,255,0.8);
+
+        }
+
+        /* style button hover */
+        .btn:hover,.open-button:hover{
+            opacity: 1;
+        }
+
+
+
+    </style>
+
+
+    
+    
+
+</head>
+<body>
+    <section class="container">
+        <h2>Chat Box Website</h2>
+
+        <button class="open-button" onclick="openform()">Chat</button>
+
+        <div class="chat-popup" id="myform">
+            <form action="" class="form-container"></form>
+
+            <h1>Inbox</h1>
+            <label for="msg"><b>Pesan</b></label>
+            <textarea class="area" placeholder="Tulis Pesan disini..." name="msg" required></textarea>
+            <button type="submit" class="btn" onclick="openform()">Kirim</button>
+            <button type="button" class="btn cancel" onclick="closeform()">Keluar</button>
+        </div>
+
+
+    </section>
+
+    <script>
+        function openform(){
+            document.getElementById("myform").style.display="block";
+        }
+
+        function closeform(){
+            document.getElementById("myform").style.display="none";
+        }
+    </script>
+
+</body>
+</html>
